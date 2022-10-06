@@ -20,7 +20,8 @@ const App = (props) => {
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-    <CacheProvider value={emotionCache}>
+     
+    <CacheProvider value={emotionCache} >
       <Head>
         <title>
           Material Kit Pro
