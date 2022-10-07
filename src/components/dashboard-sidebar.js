@@ -20,37 +20,37 @@ const items = [
   {
     href: '/',
     icon: (<ChartBarIcon fontSize="small" />),
-    title: 'Dashboard'
+    title: 'Iwa'
   },
   {
     href: '/customers',
     icon: (<UsersIcon fontSize="small" />),
-    title: 'Customers'
+    title: 'Clients'
   },
   {
     href: '/products',
     icon: (<ShoppingBagIcon fontSize="small" />),
-    title: 'Products'
+    title: 'Commandes'
   },
   {
     href: '/account',
     icon: (<UserIcon fontSize="small" />),
-    title: 'Account'
+    title: 'Compte'
   },
   {
     href: '/settings',
     icon: (<CogIcon fontSize="small" />),
-    title: 'Settings'
+    title: 'Paramettre'
   },
   {
     href: '/login',
     icon: (<LockIcon fontSize="small" />),
-    title: 'Login'
+    title: 'Connexion'
   },
   {
     href: '/register',
     icon: (<UserAddIcon fontSize="small" />),
-    title: 'Register'
+    title: 'Inscription'
   },
   {
     href: '/404',
@@ -124,15 +124,14 @@ export const DashboardSidebar = (props) => {
                   color="inherit"
                   variant="subtitle1"
                 >
-                  Acme Inc
+                 IWA
                 </Typography>
                 <Typography
                   color="neutral.400"
                   variant="body2"
                 >
-                  Your tier
-                  {' '}
-                  : Premium
+                 Tableau de bord
+                  {' '} 
                 </Typography>
               </div>
               <SelectorIcon
@@ -168,49 +167,7 @@ export const DashboardSidebar = (props) => {
             py: 3
           }}
         >
-          <Typography
-            color="neutral.100"
-            variant="subtitle2"
-          >
-            Need more features?
-          </Typography>
-          <Typography
-            color="neutral.500"
-            variant="body2"
-          >
-            Check out our Pro solution template.
-          </Typography>
-          <Box
-            sx={{
-              display: 'flex',
-              mt: 2,
-              mx: 'auto',
-              width: '160px',
-              '& img': {
-                width: '100%'
-              }
-            }}
-          >
-            <img
-              alt="Go to pro"
-              src="/static/images/sidebar_pro.png"
-            />
-          </Box>
-          <NextLink
-            href="https://material-kit-pro-react.devias.io/"
-            passHref
-          >
-            <Button
-              color="secondary"
-              component="a"
-              endIcon={(<OpenInNewIcon />)}
-              fullWidth
-              sx={{ mt: 2 }}
-              variant="contained"
-            >
-              Pro Live Preview
-            </Button>
-          </NextLink>
+           
         </Box>
       </Box>
     </>

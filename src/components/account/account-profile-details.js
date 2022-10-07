@@ -12,27 +12,27 @@ import {
 
 const states = [
   {
-    value: 'alabama',
-    label: 'Alabama'
+    value: 'Abobo',
+    label: 'Abobo'
   },
   {
-    value: 'new-york',
-    label: 'New York'
+    value: 'Yopougon',
+    label: 'Yopougon'
   },
   {
-    value: 'san-francisco',
-    label: 'San Francisco'
+    value: 'Cocody',
+    label: 'Cocody'
   }
 ];
 
 export const AccountProfileDetails = (props) => {
   const [values, setValues] = useState({
-    firstName: 'Katarina',
-    lastName: 'Smith',
-    email: 'demo@devias.io',
+    firstName: 'Loua wilfried',
+    lastName: 'Gbongué',
+    email: 'loua01@gmail.com',
     phone: '',
-    state: 'Alabama',
-    country: 'USA'
+    state: 'Abidjan',
+    country: 'CI'
   });
 
   const handleChange = (event) => {
@@ -50,7 +50,7 @@ export const AccountProfileDetails = (props) => {
     >
       <Card>
         <CardHeader
-          subheader="The information can be edited"
+          subheader="Les informations peuvent être modifiées"
           title="Profile"
         />
         <Divider />
@@ -66,8 +66,8 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                helperText="Please specify the first name"
-                label="First name"
+                helperText="Merci de préciser le prénom"
+                label="Prénom"
                 name="firstName"
                 onChange={handleChange}
                 required
@@ -82,7 +82,7 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Last name"
+                label="Nom de famille"
                 name="lastName"
                 onChange={handleChange}
                 required
@@ -97,7 +97,7 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Email Address"
+                label="Adresse e-mail"
                 name="email"
                 onChange={handleChange}
                 required
@@ -112,7 +112,7 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Phone Number"
+                label="Numéro de téléphone"
                 name="phone"
                 onChange={handleChange}
                 type="number"
@@ -127,7 +127,7 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Country"
+                label="Pays"
                 name="country"
                 onChange={handleChange}
                 required
@@ -142,7 +142,7 @@ export const AccountProfileDetails = (props) => {
             >
               <TextField
                 fullWidth
-                label="Select State"
+                label="Sélectionnez l'état"
                 name="state"
                 onChange={handleChange}
                 required
@@ -175,7 +175,7 @@ export const AccountProfileDetails = (props) => {
             color="primary"
             variant="contained"
           >
-            Save details
+          Enregistrer les détails
           </Button>
         </Box>
       </Card>

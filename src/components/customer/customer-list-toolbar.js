@@ -26,7 +26,7 @@ export const CustomerListToolbar = (props) => (
         sx={{ m: 1 }}
         variant="h4"
       >
-        Customers
+        Clients
       </Typography>
       <Box sx={{ m: 1 }}>
         <Button
@@ -45,7 +45,7 @@ export const CustomerListToolbar = (props) => (
           color="primary"
           variant="contained"
         >
-          Add Customers
+          Ajouter
         </Button>
       </Box>
     </Box>

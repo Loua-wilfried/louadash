@@ -11,10 +11,10 @@ import {
 
 const user = {
   avatar: '/static/images/avatars/avatar_6.png',
-  city: 'Los Angeles',
-  country: 'USA',
+  city: 'Abidjan',
+  country: 'CI',
   jobTitle: 'Senior Developer',
-  name: 'Katarina Smith',
+  name: 'Wilfried loua',
   timezone: 'GTM-7'
 };
 
@@ -64,7 +64,7 @@ export const AccountProfile = (props) => (
         fullWidth
         variant="text"
       >
-        Upload picture
+       Enregistrer les détails
       </Button>
     </CardActions>
   </Card>

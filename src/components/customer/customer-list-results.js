@@ -81,7 +81,7 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                   />
                 </TableCell>
                 <TableCell>
-                  Name
+                  Nom
                 </TableCell>
                 <TableCell>
                   Email
