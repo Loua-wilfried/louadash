@@ -9,6 +9,8 @@ import { AuthConsumer, AuthProvider } from '../contexts/auth-context';
 import { createEmotionCache } from '../utils/create-emotion-cache';
 import { registerChartJs } from '../utils/register-chart-js';
 import { theme } from '../theme';
+import { CookiesProvider } from 'react-cookie';
+
 
 registerChartJs();
 
@@ -20,7 +22,7 @@ const App = (props) => {
   const getLayout = Component.getLayout ?? ((page) => page);
 
   return (
-     
+     <CookiesProvider>
     <CacheProvider value={emotionCache} >
       <Head>
         <title>
@@ -46,6 +48,7 @@ const App = (props) => {
         </ThemeProvider>
       </LocalizationProvider>
     </CacheProvider>
+    </CookiesProvider>
   );
 };
 
