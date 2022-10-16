@@ -6,6 +6,7 @@ import {
   Avatar,
   Box,
   Card,
+  Button,
   Checkbox,
   Table,
   TableBody,
@@ -84,16 +85,19 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                   Nom
                 </TableCell>
                 <TableCell>
-                  Email
+                  Prenom
                 </TableCell>
                 <TableCell>
-                  Location
+                  Quatier
                 </TableCell>
                 <TableCell>
-                  Phone
+                  Numero
                 </TableCell>
                 <TableCell>
-                  Registration date
+                  Date
+                </TableCell>
+                <TableCell>
+                  Action
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -133,19 +137,38 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                     </Box>
                   </TableCell>
                   <TableCell>
-                    {customer.email}
+                    {customer.lastname}
                   </TableCell>
                   <TableCell>
                     {`${customer.address.city}, ${customer.address.state}, ${customer.address.country}`}
                   </TableCell>
                   <TableCell>
                     {customer.phone}
+
                   </TableCell>
                   <TableCell>
                     {format(customer.createdAt, 'dd/MM/yyyy')}
                   </TableCell>
+
+                  <TableCell>
+                    <Button
+                      color="primary"
+                      variant="outlined"
+                    >
+                      Modif
+                    </Button>
+
+                    <Button variant="outlined" color="error">
+                      Suppr
+                    </Button>
+                  </TableCell>
+
+
+
+
                 </TableRow>
               ))}
+
             </TableBody>
           </Table>
         </Box>
