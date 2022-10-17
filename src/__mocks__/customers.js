@@ -10,7 +10,6 @@ export const customers = [
       street: '2849 Fulton Street'
     },
     avatarUrl: '/static/images/avatars/avatar_3.png',
-    createdAt: 1555016400000,
     lastname: 'kouame alberic',
     name: 'Ekaterina Tankova',
     phone: '304-428-3097'
@@ -24,7 +23,6 @@ export const customers = [
       street: '1865  Pleasant Hill Road'
     },
     avatarUrl: '/static/images/avatars/avatar_4.png',
-    createdAt: 1555016400000,
     lastname: 'Alice',
     name: 'Cao Yu',
     phone: '712-351-5711'
@@ -38,7 +36,6 @@ export const customers = [
       street: '4894  Lakeland Park Drive'
     },
     avatarUrl: '/static/images/avatars/avatar_2.png',
-    createdAt: 1555016400000,
     lastname: 'abdoul',
     name: 'Alexa Richardson',
     phone: '770-635-2682'
@@ -52,7 +49,6 @@ export const customers = [
       street: '4158  Hedge Street'
     },
     avatarUrl: '/static/images/avatars/avatar_5.png',
-    createdAt: 1554930000000,
     lastname: 'venance',
     name: 'Anje Keizer',
     phone: '908-691-3242'
@@ -66,7 +62,6 @@ export const customers = [
       street: '75247'
     },
     avatarUrl: '/static/images/avatars/avatar_6.png',
-    createdAt: 1554757200000,
     lastname: 'sanadia',
     name: 'Clarke Gillebert',
     phone: '972-333-4106'
@@ -80,7 +75,6 @@ export const customers = [
       street: '317 Angus Road'
     },
     avatarUrl: '/static/images/avatars/avatar_1.png',
-    createdAt: 1554670800000,
     lastname: 'jorge ',
     name: 'Adam Denisov',
     phone: '858-602-3409'
@@ -94,7 +88,6 @@ export const customers = [
       street: '2188  Armbrester Drive'
     },
     avatarUrl: '/static/images/avatars/avatar_7.png',
-    createdAt: 1554325200000,
     lastname: 'elvis',
     name: 'Ava Gregoraci',
     phone: '415-907-2647'
@@ -108,7 +101,6 @@ export const customers = [
       street: '1798  Hickory Ridge Drive'
     },
     avatarUrl: '/static/images/avatars/avatar_8.png',
-    createdAt: 1523048400000,
     lastname: 'wilfried',
     name: 'Emilee Simchenko',
     phone: '702-661-1654'
@@ -122,7 +114,6 @@ export const customers = [
       street: '3934  Wildrose Lane'
     },
     avatarUrl: '/static/images/avatars/avatar_9.png',
-    createdAt: 1554702800000,
     lastname: 'kader marcial',
     name: 'Kwak Seong-Min',
     phone: '313-812-8947'
@@ -136,7 +127,6 @@ export const customers = [
       street: '368 Lamberts Branch Road'
     },
     avatarUrl: '/static/images/avatars/avatar_10.png',
-    createdAt: 1522702800000,
     lastname: 'Alidou',
     name: 'Merrile Burgett',
     phone: '801-301-7894'

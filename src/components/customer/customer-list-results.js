@@ -82,19 +82,16 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                   />
                 </TableCell>
                 <TableCell>
+                  Photo
+                </TableCell>
+                <TableCell>
                   Nom
                 </TableCell>
                 <TableCell>
                   Prenom
                 </TableCell>
                 <TableCell>
-                  Quatier
-                </TableCell>
-                <TableCell>
                   Numero
-                </TableCell>
-                <TableCell>
-                  Date
                 </TableCell>
                 <TableCell>
                   Action
@@ -128,26 +125,17 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                       >
                         {getInitials(customer.name)}
                       </Avatar>
-                      <Typography
-                        color="textPrimary"
-                        variant="body1"
-                      >
-                        {customer.name}
-                      </Typography>
                     </Box>
                   </TableCell>
                   <TableCell>
-                    {customer.lastname}
+                    {customer.name}
                   </TableCell>
                   <TableCell>
-                    {`${customer.address.city}, ${customer.address.state}, ${customer.address.country}`}
+                  {customer.lastname}
                   </TableCell>
                   <TableCell>
                     {customer.phone}
 
-                  </TableCell>
-                  <TableCell>
-                    {format(customer.createdAt, 'dd/MM/yyyy')}
                   </TableCell>
 
                   <TableCell>
