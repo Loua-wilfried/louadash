@@ -3,7 +3,7 @@ import { Box, Container, Grid, Pagination } from '@mui/material';
 import { products } from '../__mocks__/products';
 import { DashboardLayout } from '../components/dashboard-layout';
 
-import * as React from 'react';
+
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -17,6 +17,10 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 
+import React,{useState, UseEffect} from 'react';
+import axios from 'axios';
+import {Link} from 'react-router-dom'
+import { tr } from 'date-fns/locale';
 
 
 function createData(name, calories, fat, carbs, protein, action) {
@@ -33,8 +37,54 @@ const rows = [
 
 
 
+const  [loading, setLoading] = useState(true);
+const  [orders, setOrders] = useState([]);
 
 
+UseEffect(() => {
+  let isMounted = true;
+  document.title = "voir commandes";
+
+  axios.get('/api/lien').then(res=>{
+    if(isMounted)
+    {
+      if(res.data.status === 2000)
+      {
+        setOrders(res.data.orders);
+        setLoading(false);
+      }
+    }
+  })
+  return () => {
+    isMounted = false
+  };
+}, [])
+
+ var  displayOrders = "";
+if(loading){
+  return  <h1>Chargement</h1>
+}
+else{
+  displayOrders = orders.map((item)=>{
+
+  return (
+    <tr key={item.id}>
+     <td>{item.id}</td>
+     <td>{item.category.name}</td>
+     <td>{item.nature}</td>
+     <td>{item.customer}</td>
+     <td>{item.esPhone}</td>
+     <td>{item.point-depart}</td>
+     <td>{item.point-arriver}</td>
+     <td>{item.desPhone}</td>
+     <td>{item.price}</td>
+     <td>
+      <link to='/voirCommande/${item.id}' className='btn btn-primary btn-sm flloat-end'> Voir</link>
+     </td>
+    </tr>
+  )
+})
+}
 
 
 const Page = () => (
@@ -52,7 +102,6 @@ const Page = () => (
       }}
     >
        
-
        <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -96,8 +145,39 @@ const Page = () => (
         </TableBody>
       </Table>
     </TableContainer>
-
+      
+         <div className='container px-4 mt-3'>
+            <div className='card'>
+              <div className='card-header'>
+                <h4>Commandes</h4>
+              </div>
+              <div className='card-body'>
+                <div className='table-responsive'>
+                  <table className='table table-bordered table-striped'>
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Categorie commande</th>
+                        <th>nature</th>
+                        <th>Nom client</th>
+                        <th>numéro client</th>
+                        <th>Point depart</th>
+                        <th>Point arriver</th>
+                        <th>Numéro recepteur</th>
+                        <th>Prix commandes</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {displayOrders}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>   
+         </div>
     </Box>
+  
   </>
 );
 
