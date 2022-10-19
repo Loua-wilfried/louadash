@@ -81,7 +81,7 @@ export const DashboardNavbar = (props) => {
               width: 40,
               ml: 1
             }}
-            src="/static/images/avatars/avatar_1.png"
+            src="/static/images/avatars/loua.jfif"
           >
             <UserCircleIcon fontSize="small" />
           </Avatar>

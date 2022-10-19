@@ -89,10 +89,10 @@ export const LatestOrders = (props) => (
           <TableHead>
             <TableRow>
               <TableCell>
-                Order Ref
+                Commandes
               </TableCell>
               <TableCell>
-                Customer
+                Client
               </TableCell>
               <TableCell sortDirection="desc">
                 <Tooltip
