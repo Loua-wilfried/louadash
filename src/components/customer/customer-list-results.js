@@ -2,6 +2,7 @@ import { useState } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
+import { useFormik } from "formik";
 import {
   Avatar,
   Box,
@@ -14,7 +15,9 @@ import {
   TableHead,
   TablePagination,
   TableRow,
-  Typography
+  Typography,
+  Modal,
+  TextField
 } from '@mui/material';
 import { getInitials } from '../../utils/get-initials';
 
@@ -22,6 +25,7 @@ export const CustomerListResults = ({ customers, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
   const [limit, setLimit] = useState(10);
   const [page, setPage] = useState(0);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleSelectAll = (event) => {
     let newSelectedCustomerIds;
@@ -63,8 +67,26 @@ export const CustomerListResults = ({ customers, ...rest }) => {
     setPage(newPage);
   };
 
+  
+ const handleClose = ()=>{
+  setModalOpen(false)
+ }
+
+ const handleOpen = ()=>{
+  setModalOpen(true)
+ }
+
+
   return (
     <Card {...rest}>
+      <Button onClick={handleOpen}
+        color="primary"
+        size="large"
+        type="submit"
+        variant="contained"
+      >
+        Ajouter un livreur
+      </Button>
       <PerfectScrollbar>
         <Box sx={{ minWidth: 1050 }}>
           <Table>
@@ -170,6 +192,74 @@ export const CustomerListResults = ({ customers, ...rest }) => {
         rowsPerPage={limit}
         rowsPerPageOptions={[5, 10, 25]}
       />
+
+
+<Modal
+  open={modalOpen}
+  onClose={handleClose}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={{
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 800,
+    height: 600,
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    boxShadow: 24,
+    p: 4,
+  }}>
+    <Typography id="modal-modal-title" variant="h6" component="h2">
+      AJouter les livreus d'Iwa
+    </Typography>
+
+            <form>
+            <Box sx={{ my: 4 }}>
+
+            <TextField
+              
+              margin="normal"
+              name="image"
+              variant="outlined"
+              type="file"
+            />
+            <TextField
+              label="Nom du livreur"
+              margin="normal"
+              name="nom"
+              variant="outlined"
+            />
+            <TextField
+              label="prenom du livreur"
+              margin="normal"
+              name="prenom"
+              variant="outlined"
+            />
+            <TextField
+              label="numero du livreur"
+              margin="normal"
+              name="numero"
+              variant="outlined"
+            />
+               
+            </Box>
+
+            <Box sx={{ py: 2 }}>
+              <Button
+                color="primary"
+                size="large"
+                type="submit"
+                variant="contained"
+              >
+                Enregister
+              </Button>
+            </Box>
+            </form>
+  </Box>
+</Modal>
     </Card>
   );
 };

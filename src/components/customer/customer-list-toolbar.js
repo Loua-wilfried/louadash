@@ -26,28 +26,10 @@ export const CustomerListToolbar = (props) => (
         sx={{ m: 1 }}
         variant="h4"
       >
-        Livreurs 
+       Liste des livreurs de Iwa 
       </Typography>
-      <Box sx={{ m: 1 }}>
-        <Button
-          startIcon={(<UploadIcon fontSize="small" />)}
-          sx={{ mr: 1 }}
-        >
-          Importer
-        </Button>
-        <Button
-          startIcon={(<DownloadIcon fontSize="small" />)}
-          sx={{ mr: 1 }}
-        >
-          Exporter
-        </Button>
-        <Button
-          color="primary"
-          variant="contained"
-        >
-          Ajouter
-        </Button>
-      </Box>
+      
+      
     </Box>
     <Box sx={{ mt: 3 }}>
       <Card>

@@ -56,7 +56,7 @@ const Login = () => {
   return (
     <>
       <Head>
-        <title>Register | Material Kit</title>
+        <title>Inscription</title>
       </Head>
       <Box
         component="main"
@@ -119,14 +119,14 @@ const Login = () => {
                 type="submit"
                 variant="contained"
               >
-                Sign Up Now
+                Inscrivez-vous maintenant
               </Button>
             </Box>
             <Typography color="textSecondary" variant="body2">
-              Have an account?{" "}
+            j'ai un compte?{" "}
               <NextLink href="/login" passHref>
                 <Link variant="subtitle2" underline="hover">
-                  Sign In
+                Connexion 
                 </Link>
               </NextLink>
             </Typography>
