@@ -3,6 +3,11 @@ import PerfectScrollbar from 'react-perfect-scrollbar';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
 import { useFormik } from "formik";
+import UserCreate from './UserCreate';
+import Users from './Users';
+import UserUpdate from './UserUpdate';
+
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import {
   Avatar,
   Box,
@@ -260,6 +265,16 @@ export const CustomerListResults = ({ customers, ...rest }) => {
             </form>
   </Box>
 </Modal>
+
+<Router>
+      <div>
+        
+          <Users/>
+          <UserCreate/>
+          <UserUpdate/>
+      
+      </div>
+    </Router>
     </Card>
   );
 };
