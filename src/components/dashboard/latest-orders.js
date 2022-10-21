@@ -23,66 +23,66 @@ const orders = [
     ref: 'CDD1049',
     amount: 30.5,
     customer: {
-      name: 'Ekaterina Tankova'
+      name: 'Gondo yasmine'
     },
     createdAt: 1555016400000,
-    status: 'pending'
+    status: 'en attendant'
   },
   {
     id: uuid(),
     ref: 'CDD1048',
     amount: 25.1,
     customer: {
-      name: 'Cao Yu'
+      name: 'Po alexis'
     },
     createdAt: 1555016400000,
-    status: 'delivered'
+    status: 'livré'
   },
   {
     id: uuid(),
     ref: 'CDD1047',
     amount: 10.99,
     customer: {
-      name: 'Alexa Richardson'
+      name: 'Yao Charles'
     },
     createdAt: 1554930000000,
-    status: 'refunded'
+    status: 'remboursé'
   },
   {
     id: uuid(),
     ref: 'CDD1046',
     amount: 96.43,
     customer: {
-      name: 'Anje Keizer'
+      name: 'kaboré Zakaria'
     },
     createdAt: 1554757200000,
-    status: 'pending'
+    status: 'en attendant'
   },
   {
     id: uuid(),
     ref: 'CDD1045',
     amount: 32.54,
     customer: {
-      name: 'Clarke Gillebert'
+      name: 'Touré Mohamed'
     },
     createdAt: 1554670800000,
-    status: 'delivered'
+    status: 'livré'
   },
   {
     id: uuid(),
     ref: 'CDD1044',
     amount: 16.76,
     customer: {
-      name: 'Adam Denisov'
+      name: 'Kouassi Alice'
     },
     createdAt: 1554670800000,
-    status: 'delivered'
+    status: 'livré'
   }
 ];
 
 export const LatestOrders = (props) => (
   <Card {...props}>
-    <CardHeader title="Latest Orders" />
+    <CardHeader title="Dernières commandes" />
     <PerfectScrollbar>
       <Box sx={{ minWidth: 800 }}>
         <Table>
@@ -129,8 +129,8 @@ export const LatestOrders = (props) => (
                 </TableCell>
                 <TableCell>
                   <SeverityPill
-                    color={(order.status === 'delivered' && 'success')
-                    || (order.status === 'refunded' && 'error')
+                    color={(order.status === 'livré' && 'success')
+                    || (order.status === 'remboursé' && 'error')
                     || 'warning'}
                   >
                     {order.status}

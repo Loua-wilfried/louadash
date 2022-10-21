@@ -15,7 +15,7 @@ export const Sales = (props) => {
         borderRadius: 4,
         categoryPercentage: 0.5,
         data: [18, 5, 19, 27, 29, 19, 20],
-        label: 'This year',
+        label: 'ce mois',
         maxBarThickness: 10
       },
       {
@@ -25,7 +25,7 @@ export const Sales = (props) => {
         borderRadius: 4,
         categoryPercentage: 0.5,
         data: [11, 20, 12, 29, 30, 25, 13],
-        label: 'Last year',
+        label: 'le mois passé',
         maxBarThickness: 10
       }
     ],
@@ -89,10 +89,10 @@ export const Sales = (props) => {
             endIcon={<ArrowDropDownIcon fontSize="small" />}
             size="small"
           >
-            Last 7 days
+            7 dernier jours
           </Button>
         )}
-        title="Latest Sales"
+        title="Commandes"
       />
       <Divider />
       <CardContent>
@@ -121,7 +121,7 @@ export const Sales = (props) => {
           endIcon={<ArrowRightIcon fontSize="small" />}
           size="small"
         >
-          Overview
+         Aperçu
         </Button>
       </Box>
     </Card>
