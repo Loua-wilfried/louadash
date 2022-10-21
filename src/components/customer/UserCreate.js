@@ -32,13 +32,12 @@ export default function UserCreate() {
   const handleSubmit = event => {
     event.preventDefault();
     var data = {
-      'fname': fname,
-      'lname': lname,
-      'username': username,
-      'email': email,
+      'nom': nom,
+      'prenom': prenom,
+      'numero': numero,
       'avatar': avatar,
     }
-    fetch('https://www.mecallapi.com/api/users/create', {
+    fetch('lien API pour ajouter livreur', {
       method: 'POST',
       headers: {
         Accept: 'application/form-data',
@@ -57,28 +56,27 @@ export default function UserCreate() {
     )
   }
 
-  const [fname, setFname] = useState('');
-  const [lname, setLname] = useState('');
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
+  const [nom, setNom] = useState('');
+  const [prenom, setPrenom] = useState(''); 
+  const [numero, setNumero] = useState('');
   const [avatar, setAvatar] = useState('');
   return (
     <Container maxWidth="xs">
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">
-          User
+        Ajouter un nouveau livreur
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
-                autoComplete="fname"
-                name="firstName"
+                autoComplete="nom"
+                name="nom"
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
-                label="First Name"
+                id="nom"
+                label="nom"
                 onChange={(e) => setFname(e.target.value)}
                 autoFocus
               />
@@ -88,29 +86,20 @@ export default function UserCreate() {
                 variant="outlined"
                 required
                 fullWidth
-                id="lastName"
-                label="Last Name"
-                onChange={(e) => setLname(e.target.value)}
+                id="prenom"
+                label="prenom"
+                onChange={(e) => setPrenom(e.target.value)}
               />
             </Grid>
+            
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
-                id="username"
-                label="Username"
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="email"
-                label="Email"
-                onChange={(e) => setEmail(e.target.value)}
+                id="numero"
+                label="numero"
+                onChange={(e) => setNumero(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -119,7 +108,8 @@ export default function UserCreate() {
                 required
                 fullWidth
                 id="avatar"
-                label="Avatar"
+                label=""
+                type="file"
                 onChange={(e) => setAvatar(e.target.value)}
               />
             </Grid>
@@ -131,7 +121,7 @@ export default function UserCreate() {
             color="primary"
             className={classes.submit}
           >
-            Create
+            Ajouer livreur
           </Button>
         </form>
       </div>

@@ -32,14 +32,13 @@ export default function UserUpdate() {
 
   const { id } = useParams();
   useEffect(() => {
-    fetch("https://www.mecallapi.com/api/users/"+id)
+    fetch("lien API "+id)
       .then(res => res.json())
       .then(
         (result) => {
-          setFname(result.user.fname)
-          setLname(result.user.lname)
-          setUsername(result.user.username)
-          setEmail(result.user.email)
+          setNom(result.user.nom)
+          setPrenom(result.user.prenom)
+          setNumero(result.user.numero)
           setAvatar(result.user.avatar)
         }
       )
@@ -49,13 +48,12 @@ export default function UserUpdate() {
     event.preventDefault();
     var data = {
       'id': id,
-      'fname': fname,
-      'lname': lname,
-      'username': username,
-      'email': email,
+      'nom': nom,
+      'prenom': prenom,
+      'numero': numero,
       'avatar': avatar,
     }
-    fetch('https://www.mecallapi.com/api/users/update', {
+    fetch('lien API pour modifier ou mise a jours des infos livreur', {
       method: 'PUT',
       headers: {
         Accept: 'application/form-data',
@@ -74,30 +72,29 @@ export default function UserUpdate() {
     )
   }
 
-  const [fname, setFname] = useState('');
-  const [lname, setLname] = useState('');
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
+  const [nom, setNom] = useState('');
+  const [prenom, setPrenom] = useState('');
+  const [numero, setNumero] = useState('');
   const [avatar, setAvatar] = useState('');
 
   return (
     <Container maxWidth="xs">
       <div className={classes.paper}>
         <Typography component="h1" variant="h5">
-          User
+        Modifier les infos
         </Typography>
         <form className={classes.form} onSubmit={handleSubmit}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
-                autoComplete="fname"
-                name="firstName"
+                autoComplete="nom"
+                name="nom"
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
-                label="First Name"
-                value={fname}
+                id="nom"
+                label="nom"
+                value={nom}
                 onChange={(e) => setFname(e.target.value)}
                 autoFocus
               />
@@ -107,10 +104,10 @@ export default function UserUpdate() {
                 variant="outlined"
                 required
                 fullWidth
-                id="lastName"
-                label="Last Name"
-                value={lname}
-                onChange={(e) => setLname(e.target.value)}
+                id="prenom"
+                label="le prenom"
+                value={prenom}
+                onChange={(e) => setPrenom(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -118,10 +115,10 @@ export default function UserUpdate() {
                 variant="outlined"
                 required
                 fullWidth
-                id="username"
-                label="Username"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                id="numero"
+                label="numero"
+                value={numero}
+                onChange={(e) => setNumero(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -129,19 +126,9 @@ export default function UserUpdate() {
                 variant="outlined"
                 required
                 fullWidth
-                id="email"
-                label="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="avatar"
-                label="Avatar"
+                id="photo"
+                label=""
+                type="file"
                 value={avatar}
                 onChange={(e) => setAvatar(e.target.value)}
               />
@@ -154,7 +141,7 @@ export default function UserUpdate() {
             color="primary"
             className={classes.submit}
           >
-            Update
+           Modifier
           </Button>
         </form>
       </div>

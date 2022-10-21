@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import PropTypes from 'prop-types';
@@ -25,6 +26,7 @@ import {
   TextField
 } from '@mui/material';
 import { getInitials } from '../../utils/get-initials';
+
 
 export const CustomerListResults = ({ customers, ...rest }) => {
   const [selectedCustomerIds, setSelectedCustomerIds] = useState([]);
@@ -266,15 +268,11 @@ export const CustomerListResults = ({ customers, ...rest }) => {
   </Box>
 </Modal>
 
-<Router>
-      <div>
-        
-          <Users/>
-          <UserCreate/>
-          <UserUpdate/>
-      
-      </div>
-    </Router>
+  
+
+
+  
+
     </Card>
   );
 };

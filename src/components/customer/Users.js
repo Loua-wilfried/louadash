@@ -43,7 +43,7 @@ export default function UserList() {
   }, [])
   
   const UsersGet = () => {
-    fetch("https://www.mecallapi.com/api/users")
+    fetch("lien API pour liste des livreurs")
       .then(res => res.json())
       .then(
         (result) => {
@@ -60,7 +60,7 @@ export default function UserList() {
     var data = {
       'id': id
     }
-    fetch('https://www.mecallapi.com/api/users/delete', {
+    fetch('lien APi pour delete livreur', {
       method: 'DELETE',
       headers: {
         Accept: 'application/form-data',
@@ -92,7 +92,7 @@ export default function UserList() {
             <Box>
               <Link to="/create">
                 <Button variant="contained" color="primary">
-                  Ajouter
+                  Ajouter un livreur
                 </Button>
               </Link>
             </Box>
@@ -118,9 +118,9 @@ export default function UserList() {
                       <Avatar src={user.avatar} />
                     </Box>
                   </TableCell>
-                  <TableCell align="left">{user.fname}</TableCell>
-                  <TableCell align="left">{user.lname}</TableCell>
-                  <TableCell align="left">{user.username}</TableCell>
+                  <TableCell align="left">{user.nom}</TableCell>
+                  <TableCell align="left">{user.prenom}</TableCell>
+                  <TableCell align="left">{user.nummero}</TableCell>
                   <TableCell align="center">
                     <ButtonGroup color="primary" aria-label="outlined primary button group">
                       <Button onClick={() => UpdateUser(user.id)}>Modif</Button>
