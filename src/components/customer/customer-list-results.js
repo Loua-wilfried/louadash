@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import PropTypes from 'prop-types';
 import { format } from 'date-fns';
@@ -83,7 +83,69 @@ export const CustomerListResults = ({ customers, ...rest }) => {
   setModalOpen(true)
  }
 
+ const handleFermer = ()=>{
+  setModalOpen(false)
+ }
 
+ const handleOuvert = ()=>{
+  setModalOpen(true)
+ }
+
+ // supprimer un livreur
+ useEffect(() => {
+  getUser();
+ }, [])
+
+ function getUser(){
+  fetch("lien api pour supprimer un livreur").then((result)=>{
+    result.json().then((resp)=>{
+       setUser(resp)
+    })
+  })
+ }
+
+ function deleteUser(id){
+    fetch("lien api pour supprimer un livreur/${id}",{
+      method: 'DELETE'
+    }).then((result)=>{
+      result.json().then((resp)=>{
+         console.log(resp)
+         getUser();
+      })
+    })
+ }
+// supprimer un livreur
+ // modifier un livreur 
+  function selectUser(id){
+     let customers=customers[id-1];
+     setName(customers.name)
+     setLastname(customers.lastname)
+     setPhone(customers.phone)
+     setCustomerId(customers.id)
+  }
+
+ //modifier un livreur
+
+ //upddateUser
+
+ function updateUser(){
+  let item= {name, lastname, phone, customersId}
+  console.warn("item", item)
+  fetch("lien api pour supprimer un livreur/${customerId}",{
+    method: 'PUT',
+    headers:{
+      'Accept':'application/json',
+      'Content-Type':'application/json'
+    },
+    body:JSON.stringify(item)
+  }).then((result)=>{
+    result.json().then((resp)=>{
+       console.log(resp)
+       getUser();
+    })
+  })
+ }
+  //upddateUser
   return (
     <Card {...rest}>
       <Button onClick={handleOpen}
@@ -171,11 +233,13 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                     <Button
                       color="primary"
                       variant="outlined"
+                     //onClick={()=>selectUser(customer.id)}
+                      onClick={handleOuvert}
                     >
                       Modif
                     </Button>
 
-                    <Button variant="outlined" color="error">
+                    <Button onClick={()=>deleteUser(customer.id)} variant="outlined" color="error">
                       Suppr
                     </Button>
                   </TableCell>
@@ -262,6 +326,69 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                 variant="contained"
               >
                 Enregister
+              </Button>
+            </Box>
+            </form>
+  </Box>
+</Modal>
+
+<Modal
+  open={modalOpen}
+  onClose={handleFermer}
+  aria-labelledby="modal-modal-title"
+  aria-describedby="modal-modal-description"
+>
+  <Box sx={{
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 800,
+    height: 600,
+    bgcolor: 'background.paper',
+    border: '1px solid #000',
+    boxShadow: 24,
+    p: 4,
+  }}>
+    <Typography id="modal-modal-title" variant="h6" component="h2">
+      modifier les infos des livreus d'Iwa
+    </Typography>
+
+            <form>
+            <Box sx={{ my: 4 }}>
+
+            <TextField
+              onChange={(e)=>setName(e.target.value)}
+              value={name}
+              type="text"
+            />
+            <TextField
+              onChange={(e)=>setLastname(e.target.value)}
+              value={lastname}
+              type="text"
+            />
+            <TextField
+             onChange={(e)=>setPhone(e.target.value)}
+             value={phone}
+             type="text"
+            />
+            <TextField
+              onChange={(e)=>setName(e.target.value)}
+              value={name}
+              type="text"
+            />
+               
+            </Box>
+
+            <Box sx={{ py: 2 }}>
+              <Button
+                color="primary"
+                size="large"
+                type="submit"
+                variant="contained"
+                onClick={()=>updateUser()}
+              >
+                Enregister la modification
               </Button>
             </Box>
             </form>

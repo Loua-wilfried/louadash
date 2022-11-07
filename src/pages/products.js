@@ -103,8 +103,8 @@ const Page = () => {
                           <td>{item.nature}</td>
                           <td>{item.customer}</td>
                           <td>{item.esPhone}</td>
-                          <td>{item.point - depart}</td>
-                          <td>{item.point - arriver}</td>
+                          <td>{item.point-depart}</td>
+                          <td>{item.point-arriver}</td>
                           <td>{item.desPhone}</td>
                           <td>{item.price}</td>
                           <td>
