@@ -13,7 +13,7 @@ const user = {
   avatar: '/static/images/avatars/avatar_6.png',
   city: 'Abidjan',
   country: 'CI',
-  jobTitle: 'Senior Developer',
+  jobTitle: 'Junior Developer',
   name: 'Wilfried loua',
   timezone: 'GTM-7'
 };
