@@ -79,7 +79,7 @@ const Page = () => {
   return (
     <>
       <Head>
-        <title>Sign in | Material Kit</title>
+        <title>Sign in | Iwa</title>
       </Head>
       <Box
         component="main"
@@ -148,10 +148,10 @@ const Page = () => {
                       sx={{ mb: 1 }}
                       variant="h4"
                     >
-                      Confirm your email
+                     confirmer votre email
                     </Typography>
                     <Typography>
-                      We emailed a magic link to&nbsp;
+                      Nous avons envoyé un lien magique par e-mail à&nbsp;
                       <Box
                         component="span"
                         sx={{
@@ -161,7 +161,7 @@ const Page = () => {
                         {formik.values.email}
                       </Box>
                       <br />
-                      Click the link to to log in.
+                      Cliquez sur le lien pour vous connecter.
                     </Typography>
                     <Box
                       sx={{
@@ -175,13 +175,13 @@ const Page = () => {
                         color="text.secondary"
                         variant="body2"
                       >
-                        Wrong email?
+                        Mauvaise adresse mail?
                       </Typography>
                       <Button
                         color="inherit"
                         onClick={handleRetry}
                       >
-                        Use a different email
+                       Utiliser une autre adresse e-mail
                       </Button>
                     </Box>
                   </div>
@@ -191,14 +191,14 @@ const Page = () => {
                       sx={{ mb: 1 }}
                       variant="h4"
                     >
-                      Welcome
+                     Bienvenue
                     </Typography>
                     <Typography
                       color="text.secondary"
                       sx={{ mb: 3 }}
                       variant="body2"
                     >
-                      Sign up on the internal platform
+                      Inscrivez-vous sur la plateforme interne
                     </Typography>
                     <Tabs
                       onChange={handleTabChange}
@@ -229,7 +229,7 @@ const Page = () => {
                           variant="outlined"
                         />
                         <FormHelperText sx={{ mt: 1 }}>
-                          Enter a valid email since this is a fully integrated authentication system. Optionally you can skip.
+                        Entrez un e-mail valide car il s'agit d'un système d'authentification entièrement intégré. En option, vous pouvez sauter.
                         </FormHelperText>
                         {formik.errors.submit && (
                           <Typography
@@ -255,7 +255,7 @@ const Page = () => {
                           sx={{ mt: 3 }}
                           onClick={handleSkip}
                         >
-                          Skip authentication
+                          Ignorer l'authentification
                         </Button>
                       </div>
                     )}
@@ -265,10 +265,10 @@ const Page = () => {
                           sx={{ mb: 1 }}
                           variant="h6"
                         >
-                          Not available in the demo
+                         Non disponible dans la démo
                         </Typography>
                         <Typography color="text.secondary">
-                          Zalter Identity does support SMS passcodes, but to prevent unnecessary costs we disabled this feature in the demo.
+                        Zalter Identity prend en charge les codes d'accès SMS, mais pour éviter des coûts inutiles, nous avons désactivé cette fonctionnalité dans la démo.
                         </Typography>
                       </div>
                     )}
@@ -303,14 +303,14 @@ const Page = () => {
                 }}
                 variant="h1"
               >
-                Authentication sponsored by&nbsp;
+                Authentification parrainée par&nbsp;
                 <Box
                   component="a"
                   href="https://zalter.com?ref=devias-mk-react"
                   sx={{ color: '#15B79E' }}
                   target="_blank"
                 >
-                  zalter.com
+                  iwa.com
                 </Box>
               </Typography>
               <Typography
@@ -318,7 +318,7 @@ const Page = () => {
                 sx={{ mb: 3 }}
                 variant="subtitle1"
               >
-                Create secure, seamless user experiences with Zalter Passwordless Authentication.
+                Créez des expériences utilisateur sécurisées et transparentes avec l'authentification sans mot de passe Zalter.
               </Typography>
               <img
                 alt=""
