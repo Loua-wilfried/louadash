@@ -26,7 +26,7 @@ const App = (props) => {
     <CacheProvider value={emotionCache} >
       <Head>
         <title>
-          Iwa 
+          Iwa Service de livraison
         </title>
         <meta
           name="viewport"
