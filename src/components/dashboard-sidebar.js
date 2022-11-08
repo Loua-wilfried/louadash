@@ -33,6 +33,11 @@ const items = [
     title: 'Commandes'
   },
   {
+    href: '/clients',
+    icon: (<ShoppingBagIcon fontSize="small" />),
+    title: 'Clients'
+  },
+  {
     href: '/account',
     icon: (<UserIcon fontSize="small" />),
     title: 'Compte'

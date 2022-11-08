@@ -8,7 +8,7 @@ const Page = () => (
   <>
     <Head>
       <title>
-        Settings | Material Kit
+       paramettre Iwa
       </title>
     </Head>
     <Box

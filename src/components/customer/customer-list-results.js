@@ -26,6 +26,7 @@ import {
   TextField
 } from '@mui/material';
 import { getInitials } from '../../utils/get-initials';
+import { SettingsApplications } from "@mui/icons-material";
 
 
 export const CustomerListResults = ({ customers, ...rest }) => {
@@ -146,6 +147,48 @@ export const CustomerListResults = ({ customers, ...rest }) => {
   })
  }
   //upddateUser
+
+  // ajouter un livreur
+    const[photo, setPhoto] = React.useState('')
+    const[name, setName] = React.useState('')
+    const[lastname, setLastname] = React.useState('')
+    const[numero, setNumero] = React.useState('')
+    const [error, setError] = React.useState(false)
+  
+    const addLivreur = async()=>{
+    if(!photo || !name || !lastname || !numero ){
+      setError(true)
+      return false
+    }
+      
+      console.warn(photo, name, lastname, numero)
+
+      const userId = JSON.parse(localStorage.getItem('user')).id-livreurs;
+      const result = fetch("https://iwadeli.herokuapp.com/api/addLivreur",{
+        method:'POST'.
+        body.JSON.stringify({photo, name, lastname, numero}),
+        headers:{
+          "Content-Type":"application/json"
+        }
+      })
+
+      result= await result.json();
+      console.warn(result)
+    }
+  // ajouter un livreur
+  //liste des livreurs
+  const[livreur, setLivreur] = React.useState([]);
+  useEffect(()=>{
+    getLivreur()
+  },[])
+
+  const getLivreur = async () =>{
+    let result = await fetch("https://iwadeli.herokuapp.com/api/listLivreur");
+    result = await result.json();
+    setLivreur(livreur)
+  }
+  console.warn("livreur", livreur);
+  //liste des livreurs
   return (
     <Card {...rest}>
       <Button onClick={handleOpen}
@@ -284,37 +327,45 @@ export const CustomerListResults = ({ customers, ...rest }) => {
     p: 4,
   }}>
     <Typography id="modal-modal-title" variant="h6" component="h2">
-      AJouter les livreus d'Iwa
+      AJouter les livreus Iwa
     </Typography>
 
             <form>
             <Box sx={{ my: 4 }}>
 
             <TextField
-              
               margin="normal"
-              name="image"
+              value={photo}
               variant="outlined"
               type="file"
+              onChange={(e)=>{setPhoto(e.target.value)}}
             />
             <TextField
               label="Nom du livreur"
+              value={name}
               margin="normal"
-              name="nom"
+              
               variant="outlined"
+              onChange={(e)=>{setName(e.target.value)}}
             />
             <TextField
               label="prenom du livreur"
+              value={lastname}
               margin="normal"
-              name="prenom"
+              
+
               variant="outlined"
+              onChange={(e)=>{setLastname(e.target.value)}}
             />
             <TextField
               label="numero du livreur"
+              value={numero}
               margin="normal"
-              name="numero"
+              
               variant="outlined"
+              onChange={(e)=>{setNumero(e.target.value)}}
             />
+            {error && !numero && <span>Le numéro n'est pas juste</span>}
                
             </Box>
 
@@ -324,6 +375,7 @@ export const CustomerListResults = ({ customers, ...rest }) => {
                 size="large"
                 type="submit"
                 variant="contained"
+                onClick={addLivreur}
               >
                 Enregister
               </Button>
@@ -332,78 +384,10 @@ export const CustomerListResults = ({ customers, ...rest }) => {
   </Box>
 </Modal>
 
-<Modal
-  open={modalOpen}
-  onClose={handleFermer}
-  aria-labelledby="modal-modal-title"
-  aria-describedby="modal-modal-description"
->
-  <Box sx={{
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    width: 800,
-    height: 600,
-    bgcolor: 'background.paper',
-    border: '1px solid #000',
-    boxShadow: 24,
-    p: 4,
-  }}>
-    <Typography id="modal-modal-title" variant="h6" component="h2">
-      modifier les infos des livreus d'Iwa
-    </Typography>
-
-            <form>
-            <Box sx={{ my: 4 }}>
-
-            <TextField
-              onChange={(e)=>setName(e.target.value)}
-              value={name}
-              type="text"
-            />
-            <TextField
-              onChange={(e)=>setLastname(e.target.value)}
-              value={lastname}
-              type="text"
-            />
-            <TextField
-             onChange={(e)=>setPhone(e.target.value)}
-             value={phone}
-             type="text"
-            />
-            <TextField
-              onChange={(e)=>setName(e.target.value)}
-              value={name}
-              type="text"
-            />
-               
-            </Box>
-
-            <Box sx={{ py: 2 }}>
-              <Button
-                color="primary"
-                size="large"
-                type="submit"
-                variant="contained"
-                onClick={()=>updateUser()}
-              >
-                Enregister la modification
-              </Button>
-            </Box>
-            </form>
-  </Box>
-</Modal>
-
-  
-
-
-  
-
     </Card>
   );
 };
 
 CustomerListResults.propTypes = {
   customers: PropTypes.array.isRequired
-};
+}
