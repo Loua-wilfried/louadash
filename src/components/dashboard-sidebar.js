@@ -32,11 +32,7 @@ const items = [
     icon: (<ShoppingBagIcon fontSize="small" />),
     title: 'Commandes'
   },
-  {
-    href: '/clients',
-    icon: (<ShoppingBagIcon fontSize="small" />),
-    title: 'Clients'
-  },
+  
   {
     href: '/account',
     icon: (<UserIcon fontSize="small" />),

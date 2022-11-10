@@ -45,10 +45,10 @@ const Page = () => {
   useEffect(() => {
     let isMounted = true;
     document.title = "voir commandes";
-    axios.get('/api/lien').then(res => {
+    axios.get('https://iwadeli.herokuapp.com/api/listCopie').then(res => {
       if (isMounted) {
-        if (res.data.status === 2000) {
-          setOrders(res.data.orders);
+        if (res.data.status === 200) {
+          setOrders(res.data.orderCopie);
           setLoading(false);
         }
       }
@@ -75,7 +75,7 @@ const Page = () => {
         <div className='container px-4 mt-3'>
           <div className='card'>
             <div className='card-header'>
-              <h4>Commandes</h4>
+              <h4>Commandes Iwa</h4>
             </div>
             <div className='card-body'>
               <div className='table-responsive'>
@@ -83,32 +83,31 @@ const Page = () => {
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Categorie commande</th>
-                      <th>nature</th>
+                      <th>Nature commande</th>
                       <th>Nom client</th>
-                      <th>numéro client</th>
                       <th>Point depart</th>
                       <th>Point arriver</th>
-                      <th>Numéro recepteur</th>
                       <th>Prix commandes</th>
+                      <th>Numéro recepteur</th>
+                      <th>Numéro destinataire</th>
+                      <th>Details</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     {
-                      loading ? <h1>Chargement.........</h1> : orders.map((item) => {
+                      loading ? <h1>Chargement.........</h1> : orderCopie.map((item) => {
                         <tr key={item.id}>
-                          <td>{item.id}</td>
-                          <td>{item.category.name}</td>
                           <td>{item.nature}</td>
-                          <td>{item.customer}</td>
-                          <td>{item.esPhone}</td>
-                          <td>{item.point-depart}</td>
-                          <td>{item.point-arriver}</td>
-                          <td>{item.desPhone}</td>
-                          <td>{item.price}</td>
+                          <td>{item.id_user}</td>
+                          <td>{item.lieudedepart}</td>
+                          <td>{item.lieudelivraison}</td>
+                          <td>{item.montant}</td>
+                          <td>{item.contactdudestinataire}</td>
+                          <td>{item.contact}</td>
+                          <td>{item.details}</td>
                           <td>
-                            <link to='/voirCommande/${item.id}' className='btn btn-primary btn-sm flloat-end'> Voir</link>
+                            <link to='https://iwadeli.herokuapp.com/api/list/${item.id}' className='btn btn-primary btn-sm flloat-end'> Voir</link>
                           </td>
                         </tr>
 
