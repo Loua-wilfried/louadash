@@ -44,8 +44,7 @@ const handleClose = ()=>{
 
   
 const Page = () => (
-  const [loading, setLoading] = useState(true);
-  const [orders, setOrders] = useState([]);
+ 
 
 
   useEffect(() => {
@@ -54,7 +53,7 @@ const Page = () => (
     axios.get('https://iwadeli.herokuapp.com/api/getUser').then(res => {
       if (isMounted) {
         if (res.data.status === 200) {
-          setOrders(res.data.orderCopie);
+          setOrders(res.data.user);
           setLoading(false);
         }
       }
@@ -97,16 +96,12 @@ const Page = () => (
                   </thead>
                   <tbody>
                     {
-                      loading ? <h1>Chargement.........</h1> : orderCopie.map((item) => {
+                      loading ? <h1>Chargement.........</h1> : user.map((item) => {
                         <tr key={item.id}>
-                          <td>{item.nature}</td>
-                          <td>{item.id_user}</td>
-                          <td>{item.lieudedepart}</td>
-                          <td>{item.lieudelivraison}</td>
-                          <td>{item.montant}</td>
-                          <td>{item.contactdudestinataire}</td>
-                          <td>{item.contact}</td>
-                          <td>{item.details}</td>
+                          <td>{item.photo}</td>
+                          <td>{item.nom}</td>
+                          <td>{item.prenom}</td>
+                         
                           <td>
                             <link to='https://iwadeli.herokuapp.com/api/list/${item.id}' className='btn btn-primary btn-sm flloat-end'> Voir</link>
                           </td>
