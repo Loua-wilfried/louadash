@@ -61,7 +61,7 @@ const Page = () => (
     return () => {
       isMounted = false
     };
-  }, []);
+  }, []),
   <>
     <Head>
       <title>
