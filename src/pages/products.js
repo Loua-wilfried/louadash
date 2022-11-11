@@ -107,7 +107,7 @@ const Page = () => {
                           <td>{item.contact}</td>
                           <td>{item.details}</td>
                           <td>
-                            <link to='https://iwadeli.herokuapp.com/api/list/${item.id}' className='btn btn-primary btn-sm flloat-end'> Voir</link>
+                            <link to=''> Voir</link>
                           </td>
                         </tr>
 
