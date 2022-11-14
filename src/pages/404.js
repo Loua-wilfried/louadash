@@ -71,7 +71,7 @@ const Page = () => {
     /**
      * add the access token
      */
-    getUsersList("<Token>")
+    getUsersList("175|sDh6gYRw6pkPi9IxjeQthS0sOYU0ASVBwCvuwYpq")
       .then((res) => {
         setUsers({ ...users, data: res.data });
       })
