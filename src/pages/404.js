@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import Head from "next/head";
 import { Box, Container, Grid, Pagination } from "@mui/material";
 import { products } from "../__mocks__/products";
@@ -82,7 +82,13 @@ const Page = () => {
       });
   }, []);
   
+// evrffrhfoif hbfhrr"jfhg"rff
 
+
+
+
+
+//ffgf"kukgu''fg'if 
   return (
     <>
       <Head>
