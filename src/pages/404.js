@@ -59,7 +59,7 @@ const Page = () => {
   const [users, setUsers] = useState({
     loading: true,
     error: null,
-    data: null,
+    data: [],
   });
 
   //get liste of users
@@ -74,11 +74,14 @@ const Page = () => {
     getUsersList("175|sDh6gYRw6pkPi9IxjeQthS0sOYU0ASVBwCvuwYpq")
       .then((res) => {
         setUsers({ ...users, data: res.data });
+        
       })
-      .catch((er) => {
+      .catch((err) => {
         setUsers({ ...users, error: err });
+        console.log(users.data)
       });
   }, []);
+  
 
   return (
     <>
