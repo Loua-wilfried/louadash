@@ -4,7 +4,7 @@ export const getUsersList = (token) => {
     return new Promise((resolve, reject) => {
         axios.get(GET_USER_URL, {
             headers: {
-                'Autirization': `Baeder${token}`
+                'Autirization': `Bearer${token}`
             }
         })
             .then(res => {

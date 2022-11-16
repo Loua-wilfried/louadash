@@ -22,6 +22,7 @@ import { tr } from "date-fns/locale";
 
 import { styled } from "@mui/material/styles";
 import { getUsersList } from "../../backend/users";
+import { get } from "http";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -56,11 +57,12 @@ const rows = [
 ];
 
 const Page = () => {
-  const [users, setUsers] = useState({
+const [users, setUsers] = useState({
     loading: true,
     error: null,
     data: [],
   });
+
 
   //get liste of users
   useEffect(() => {
@@ -68,9 +70,13 @@ const Page = () => {
       ...users,
       loading: true,
     });
+  
     /**
      * add the access token
      */
+    
+
+
     getUsersList("175|sDh6gYRw6pkPi9IxjeQthS0sOYU0ASVBwCvuwYpq")
       .then((res) => {
         setUsers({ ...users, data: res.data });
@@ -82,13 +88,8 @@ const Page = () => {
       });
   }, []);
   
-// evrffrhfoif hbfhrr"jfhg"rff
-
-
-
-
-
-//ffgf"kukgu''fg'if 
+  
+  
   return (
     <>
       <Head>

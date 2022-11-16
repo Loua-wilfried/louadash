@@ -32,9 +32,9 @@ const Login = () => {
     },
     validationSchema: Yup.object({
       contact: Yup.string()
-        .matches(phoneRegExp, "Phone number is not valid")
+        .matches(phoneRegExp, "Numero incorect")
         .max(255)
-        .required("Email is required"),
+        .required("Email est obligatoire"),
       password: Yup.string()
         .min(8, "Password is too short - should be 8 chars minimum.")
         .max(255)
@@ -56,7 +56,7 @@ const Login = () => {
   return (
     <>
       <Head>
-        <title>Inscription</title>
+        <title>Connexion</title>
       </Head>
       <Box
         component="main"
@@ -79,14 +79,14 @@ const Login = () => {
                 Connectez vous a votre compte
               </Typography>
               <Typography color="textSecondary" gutterBottom variant="body2">
-                Utiliser Téléphone et mot de passe
+                Utiliser vore numéro de téléphone et mot de passe
               </Typography>
             </Box>
             <TextField
               error={Boolean(formik.touched.contact && formik.errors.contact)}
               fullWidth
               helperText={formik.touched.contact && formik.errors.contact}
-              label="Phone Number"
+              label="Numero de telephone"
               margin="normal"
               name="contact"
               onBlur={formik.handleBlur}
@@ -98,7 +98,7 @@ const Login = () => {
               error={Boolean(formik.touched.password && formik.errors.password)}
               fullWidth
               helperText={formik.touched.password && formik.errors.password}
-              label="password"
+              label="Mot de passe"
               margin="normal"
               name="password"
               onBlur={formik.handleBlur}
@@ -119,14 +119,14 @@ const Login = () => {
                 type="submit"
                 variant="contained"
               >
-                Inscrivez-vous maintenant
+                Connectez-vous
               </Button>
             </Box>
             <Typography color="textSecondary" variant="body2">
-            j'ai un compte?{" "}
+           vous n'avez pas de compte?{" "}
               <NextLink href="/login" passHref>
                 <Link variant="subtitle2" underline="hover">
-                Connexion 
+                Inscription
                 </Link>
               </NextLink>
             </Typography>
