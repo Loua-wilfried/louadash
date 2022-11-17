@@ -45,10 +45,10 @@ const Page = () => {
   useEffect(() => {
     let isMounted = true;
     document.title = "voir commandes";
-    axios.get('https://iwadeli.herokuapp.com/api/listCopie').then(res => {
+    axios.get(' https://iwadeli.herokuapp.com/api/comAU').then(res => {
       if (isMounted) {
         if (res.data.status === 200) {
-          setOrders(res.data.orderCopie);
+          setOrders(res.data);
           setLoading(false);
         }
       }
@@ -96,10 +96,10 @@ const Page = () => {
                   </thead>
                   <tbody>
                     {
-                      loading ? <h1>Chargement.........</h1> : orderCopie.map((item) => {
+                      loading ? <h1>Chargement.........</h1> : orders.map((item) => {
                         <tr key={item.id}>
                           <td>{item.nature}</td>
-                          <td>{item.id_user}</td>
+                          <td>{item.id_users}</td>
                           <td>{item.lieudedepart}</td>
                           <td>{item.lieudelivraison}</td>
                           <td>{item.montant}</td>
