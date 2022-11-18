@@ -44,7 +44,7 @@ const Page = () => {
   useEffect(() => {
     let isMounted = true;
     document.title = "voir les commandes";
-    axios.get(' https://iwadeli.herokuapp.com/api/comAU').then(res => {
+    axios.get('https://iwadeli.herokuapp.com/api/add').then(res => {
       if (isMounted) {
         if (res.data.status === 200) {
           setOrders(res.data);
